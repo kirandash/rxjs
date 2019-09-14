@@ -74,3 +74,6 @@ this.myObservable$ = interval(500).pipe(take(5)).pipe(map(x => x * 10));
 ### 3.3 filter
 filtes data from payload.
 this.myObservable$ = interval(500).pipe(take(5)).pipe(map(x => x * 10)).pipe(filter(x => x < 20));
+
+### 3.4 mergeMap & of
+Helps us access 2 different streams from 2 different observables and modify the values if reqd.
