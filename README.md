@@ -39,3 +39,13 @@ ng serve
 4. observer.next(), observer.error(), observer.complete()
 5. myobservable$.subscribe(value => {}, err=> {}, () => {})
 6. myobservable$.unsubsribe
+
+### 2.3 Subject - creation
+1. observer contains 3 methods - next, error, complete.
+2. Observable is an outer wrapper that listens to updates from an observer.
+3. Each observable will have it's own set of observers and can't be shared. Also observers cant interact with each other.
+4. A subject is both an observer and observable. It allows us to access observer from outside of observable.
+5. It will receive values from all next statements executed after the call.
+6. import { Subject } from 'rxjs';
+7. this.mySubject$ = new Subject();
+8. this.mySubject$.subscribe
