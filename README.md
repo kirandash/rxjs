@@ -2,6 +2,7 @@
 
 ## 1. Intro - Asynchronous and Reactive Programming
 Helps handling Real time interactions across multiple devices. Eg: Updates, Analytics, Data.
+Created by Ben
 
 ### 1.1 Evolution of asynchronous programming
 1. Asynchronous: code executes in the background. But where to write dependent codes?
@@ -30,3 +31,11 @@ Data is nothing but a stream of events/updates.
 ### 2.1 Angular project setup
 ng new rxjs --directory ./
 ng serve
+
+### 2.2 Create an observable
+1. import { Observable } from 'rxjs';
+2. $ at end of observable variables myobservable$.
+3. Observable.create
+4. observer.next(), observer.error(), observer.complete()
+5. myobservable$.subscribe(value => {}, err=> {}, () => {})
+6. myobservable$.unsubsribe
