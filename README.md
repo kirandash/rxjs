@@ -70,3 +70,7 @@ import { take } from 'rxjs/operators';
 ### 3.2 map
 map operator helps us modify the value from payload.
 this.myObservable$ = interval(500).pipe(take(5)).pipe(map(x => x * 10));
+
+### 3.3 filter
+filtes data from payload.
+this.myObservable$ = interval(500).pipe(take(5)).pipe(map(x => x * 10)).pipe(filter(x => x < 20));
