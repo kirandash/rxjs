@@ -89,3 +89,8 @@ fromEvent(document, 'click').subscribe(x => console.dir(x));
 ### 4.2 Observable from input with debounce()
 1. <input type="text" [(ngModel)]="search" (ngModelChange)="inputChanged($event)">
 2. this.searchSubject$.pipe(debounceTime(500)).subscribe(val => console.log(val));
+
+### 4.3 Wrap an API
+1. async pipe : helps us to get data from observable without even subscribing to it.
+2. distinctUntilChanged: skip any values that are identical to previous value
+3. switchMap: cancel any previous subscription and return the most recent one

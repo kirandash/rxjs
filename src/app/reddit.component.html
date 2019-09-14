@@ -1,0 +1,8 @@
+<h3>Search images on reddit</h3>
+<div>
+  <input type="text" placeholder="Search" [(ngModel)]='searchString' (ngModelChange)='searchChange($event)'>
+  <button (click)="searchString = ''">Clear</button>
+</div>
+<div *ngFor="let result of results$ | async">
+  <img [src]="result.data.url" alt="No Image">
+</div>
