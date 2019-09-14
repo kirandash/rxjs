@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { SubjectComponent } from './subject.component';
+import { BehaviorSubjectComponent } from './behavior-subject.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SubjectComponent
+    SubjectComponent,
+    BehaviorSubjectComponent
   ],
   imports: [
     BrowserModule

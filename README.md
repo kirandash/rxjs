@@ -49,3 +49,8 @@ ng serve
 6. import { Subject } from 'rxjs';
 7. this.mySubject$ = new Subject();
 8. this.mySubject$.subscribe
+
+### 2.4 Behavior Subject
+A behavior subject is a subject / observable which takes an initial value or the most recent value.
+1. import { BehaviorSubject } from 'rxjs';
+2. this.myBehaviorSubject$ = new BehaviorSubject(200);
