@@ -77,3 +77,7 @@ this.myObservable$ = interval(500).pipe(take(5)).pipe(map(x => x * 10)).pipe(fil
 
 ### 3.4 mergeMap & of
 Helps us access 2 different streams from 2 different observables and modify the values if reqd.
+
+### 3.5 switchMap
+It will cancel any previous subscription and return a new one with most recent value.
+Ex: in a search bar when user keeps on typing, only consider the last data or most recent data typed. And ignore all previous data.

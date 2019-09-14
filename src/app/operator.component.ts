@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { filter } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-operator',
@@ -15,6 +16,7 @@ export class OperatorComponent implements OnInit {
   myNumsObservable$;
   myLettersObservable$;
   mergedObservable$;
+  switchedObservable$;
   ngOnInit() {
     console.log(`Operators: 3.1 take & interval ==============`);
     this.myNumsObservable$ = interval(500).pipe(take(5)).pipe(map(x => x * 10)).pipe(filter(x => x < 20));
@@ -26,5 +28,11 @@ export class OperatorComponent implements OnInit {
         return letter + mynum;
       }))
     )).subscribe(value => console.log(value));
+    console.log(`Operators: switchMap ==============`);
+    this.switchedObservable$ = this.myLettersObservable$.pipe(switchMap((letter: any) =>
+      this.myNumsObservable$.pipe(map((mynum: any) => {
+        return letter + mynum;
+      }))
+    )).subscribe(value => console.log('Switched Map ' + value)); // will take only the latest input from myLettersObservable
   }
 }
