@@ -66,3 +66,7 @@ import { interval } from 'rxjs';
 import { take } from 'rxjs/operators';
 1. take first n number of values from observable.
 2. this.myObservable$ = interval(1000).pipe(take(5));
+
+### 3.2 map
+map operator helps us modify the value from payload.
+this.myObservable$ = interval(500).pipe(take(5)).pipe(map(x => x * 10));
