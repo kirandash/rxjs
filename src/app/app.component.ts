@@ -10,6 +10,7 @@ import { fromEvent } from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'rxjs';
+  search: string;
   myobservable$; // Good practice to end your observables with $
   ngOnInit() {
     this.myobservable$ = Observable.create((observer) => {

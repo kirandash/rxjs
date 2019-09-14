@@ -85,3 +85,7 @@ Ex: in a search bar when user keeps on typing, only consider the last data or mo
 ## 4. User Interface
 ### 4.1 Observable from a button
 fromEvent(document, 'click').subscribe(x => console.dir(x));
+
+### 4.2 Observable from input with debounce()
+1. <input type="text" [(ngModel)]="search" (ngModelChange)="inputChanged($event)">
+2. this.searchSubject$.pipe(debounceTime(500)).subscribe(val => console.log(val));
