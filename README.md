@@ -58,3 +58,11 @@ A behavior subject is a subject / observable which takes an initial value or the
 ### 2.5 Replay subject
 This gets all the values that we have passed to a subject since the beginning. This will save all the values and pass to all new subscription.
 1. this.myReplaySubject$ = new ReplaySubject();
+
+## 3. Operators
+Operators helpls us to modify an observable without unwrapping it.
+### 3.1 take & interval
+import { interval } from 'rxjs';
+import { take } from 'rxjs/operators';
+1. take first n number of values from observable.
+2. this.myObservable$ = interval(1000).pipe(take(5));
