@@ -54,3 +54,7 @@ ng serve
 A behavior subject is a subject / observable which takes an initial value or the most recent value.
 1. import { BehaviorSubject } from 'rxjs';
 2. this.myBehaviorSubject$ = new BehaviorSubject(200);
+
+### 2.5 Replay subject
+This gets all the values that we have passed to a subject since the beginning. This will save all the values and pass to all new subscription.
+1. this.myReplaySubject$ = new ReplaySubject();
