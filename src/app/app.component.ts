@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 // import * from 'rxjs'; // Don't import the whole rxjs library since it is huge
 import { Observable } from 'rxjs';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,9 @@ export class AppComponent implements OnInit, OnDestroy {
     }, () => {
       console.log('End of observable'); // This will get called only if observer.complete() is called
     });
+
+    // 4.1 Create observable from a button
+    fromEvent(document, 'click').subscribe(x => console.dir(x));
   }
 
   ngOnDestroy() {

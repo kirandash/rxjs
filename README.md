@@ -81,3 +81,7 @@ Helps us access 2 different streams from 2 different observables and modify the 
 ### 3.5 switchMap
 It will cancel any previous subscription and return a new one with most recent value.
 Ex: in a search bar when user keeps on typing, only consider the last data or most recent data typed. And ignore all previous data.
+
+## 4. User Interface
+### 4.1 Observable from a button
+fromEvent(document, 'click').subscribe(x => console.dir(x));
